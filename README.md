@@ -1,66 +1,63 @@
-Secret Santa Assignment
+# Secret Santa Assignment
 
-Overview
+## Overview
 
 This project automates the Secret Santa assignment process for employees in a company. Employees are assigned a Secret Child to whom they will give a gift anonymously, following a set of constraints to ensure fairness.
 
-Features
+## Features
 
-Upload an Excel file with employee details.
+- Upload an Excel file with employee details.
+- Upload a previous year's Secret Santa assignments to avoid repetition.
+- Assign a Secret Child to each employee while following constraints.
+- Download assignments as a CSV file.
+- Error handling for invalid inputs.
+- Unit tests for assignment logic.
 
-Upload a previous year's Secret Santa assignments to avoid repetition.
+## Installation
 
-Assign a Secret Child to each employee while following constraints.
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd secret-santa
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-Download assignments as a CSV file.
+## Running the Application
 
-Error handling for invalid inputs.
+1. Start the server:
+   ```sh
+   npm start
+   ```
+2. Open [http://localhost:4000](http://localhost:4000) in your browser.
 
-Unit tests for assignment logic.
+## API Endpoints
 
-Installation
+### Upload Employee and Previous Assignment Files
 
-1) Clone the repository:
+**POST /upload**
 
-git clone <repository-url>
-cd secret-santa
+- **Input:** Form-data with `employees` (Excel file) and optionally `previousAssignments` (Excel file).
+- **Response:** JSON with assigned Secret Santa pairs.
 
-2)Install dependencies:
+### Download Secret Santa Assignments
 
-npm install
+**GET /download**
 
-Running the Application
+- **Response:** CSV file containing Secret Santa assignments.
 
-1) Start the server:
-
-npm start
-
-2) Open http://localhost:4000 in your browser.
-
-API Endpoints
-
-Upload Employee and Previous Assignment Files
-
-POST /upload
-
-Input: Form-data with employees (Excel file) and optionally previousAssignments (Excel file).
-
-Response: JSON with assigned Secret Santa pairs.
-
-Download Secret Santa Assignments
-
-GET /download
-
-Response: CSV file containing Secret Santa assignments.
-
-Testing
+## Testing
 
 Run unit tests using Jest:
-
+```sh
 npm test
+```
 
-File Structure
+## File Structure
 
+```
 secret-santa/
 │-- public/                # Static frontend files (optional)
 │-- uploads/               # Temporary file storage
@@ -69,38 +66,31 @@ secret-santa/
 │-- index.js               # Main application logic
 │-- package.json           # Dependencies and scripts
 │-- README.md              # Project documentation
+```
 
-Technologies Used
+## Technologies Used
 
-Node.js
+- **Node.js**
+- **Express.js**
+- **Multer** (for file uploads)
+- **xlsx** (for Excel parsing)
+- **json2csv** (for CSV generation)
+- **Jest** (for unit testing)
 
-Express.js
+## Contributing
 
-Multer (for file uploads)
+1. Fork the repository.
+2. Create a new branch:
+   ```sh
+   git checkout -b feature-branch
+   ```
+3. Commit your changes and push:
+   ```sh
+   git commit -m "Add new feature"
+   git push origin feature-branch
+   ```
+4. Open a pull request.
 
-xlsx (for Excel parsing)
-
-json2csv (for CSV generation)
-
-Jest (for unit testing)
-
-Contributing
-
-1) Fork the repository.
-
-2) Create a new branch:
-
-git checkout -b feature-branch
-
-3) Commit your changes and push:
-
-git commit -m "Add new feature"
-git push origin feature-branch
-
-4) Open a pull request.
-
-License
+## License
 
 This project is licensed under the MIT License.
-
-
