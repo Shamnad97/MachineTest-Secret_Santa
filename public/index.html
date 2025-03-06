@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Secret Santa Assignment</h1>
+        <input type="file" id="employeesFile" />
+        <input type="file" id="previousAssignmentsFile" />
+        <button id="uploadButton">Upload & Generate</button>
+        <button id="downloadButton">Download CSV</button>
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee Email</th>
+                    <th>Secret Child Name</th>
+                    <th>Secret Child Email</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
